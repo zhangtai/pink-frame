@@ -26,7 +26,11 @@ sudo vim /etc/ImageMagick-6/policy.xml
 # Comment out the line prevent pdf: <policy domain="coder" rights="none" pattern="PDF" />
 ```
 
-## Others
+## Usage
+
+```shell
+sudo ./epd /path/to/file.bmp
+```
 
 ### Turning off Pi power management
 
