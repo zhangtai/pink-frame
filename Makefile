@@ -2,14 +2,14 @@ DIR_Config   = ./lib/Config
 DIR_EPD      = ./lib/e-Paper
 DIR_FONTS    = ./lib/Fonts
 DIR_GUI      = ./lib/GUI
-DIR_Examples = ./examples
+DIR_SRC = ./src
 
 DIR_BIN      = ./bin
 
-OBJ_C = $(wildcard ${DIR_Config}/*.c ${DIR_EPD}/*.c ${DIR_FONTS}/*.c ${DIR_GUI}/*.c ${DIR_Examples}/*.c )
+OBJ_C = $(wildcard ${DIR_Config}/*.c ${DIR_EPD}/*.c ${DIR_FONTS}/*.c ${DIR_GUI}/*.c ${DIR_SRC}/*.c )
 OBJ_O = $(patsubst %.c,${DIR_BIN}/%.o,$(notdir ${OBJ_C}))
 
-TARGET = epd
+TARGET = pf
 
 CC = gcc
 
@@ -37,10 +37,9 @@ ${DIR_BIN}/%.o:$(DIR_FONTS)/%.c
 ${DIR_BIN}/%.o:$(DIR_GUI)/%.c
 	$(CC) $(CFLAGS) -c  $< -o $@ 
 	
-${DIR_BIN}/%.o:$(DIR_Examples)/%.c
+${DIR_BIN}/%.o:$(DIR_SRC)/%.c
 	$(CC) $(CFLAGS) -c  $< -o $@ 
 
 clean :
 	rm $(DIR_BIN)/*.* 
 	rm $(TARGET) 
-

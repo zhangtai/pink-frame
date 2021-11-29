@@ -36,7 +36,7 @@ convert "$FILE_PATH_CANVAS" "${FILE_OUTPUT_PATH}/${FILE_NAME_BMP_RESIZE}" \
     -geometry +30+61 -composite "${FILE_OUTPUT_PATH}/${FILE_NAME_BMP_FINAL}"
 
 echo "$(date) Sending to ePaper"
- sudo ./epd "${FILE_OUTPUT_PATH}/${FILE_NAME_BMP_FINAL}"
+sudo ./pf "${FILE_OUTPUT_PATH}/${FILE_NAME_BMP_FINAL}"
 
 echo "$(date) Clean generated files"
 rm -f "${FILE_OUTPUT_PATH}/${FILE_NAME_BMP}" "${FILE_OUTPUT_PATH}/${FILE_NAME_BMP_RESIZE}" \
