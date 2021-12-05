@@ -29,7 +29,7 @@ sudo vim /etc/ImageMagick-6/policy.xml
 ## Usage
 
 ```shell
-sudo ./epd /path/to/file.bmp
+sudo ./pf /path/to/file.bmp
 ```
 
 ### Turning off Pi power management

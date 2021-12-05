@@ -1,11 +1,13 @@
 #!venv/bin/python3
 import subprocess
+
 import os
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from PIL import Image, ImageFont, ImageDraw
 from datetime import datetime
 import requests
+import json
 
 
 def main():
@@ -21,7 +23,7 @@ def main():
 
     im_name = create_new_postcard(output_path, sensor_img)
 
-    subprocess.call(['sudo', './epd', f"{output_path}{im_name}"])
+    subprocess.call(['sudo', './pf', f"{output_path}{im_name}"])
 
 
 def load_page(url_key, url, output_path):
