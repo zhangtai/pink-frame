@@ -9,13 +9,10 @@ Raspberry Pi powered e-paper frame
 ```shell
 export version=1.71
 cd /tmp
-curl -LO http://www.airspayce.com/mikem/bcm2835/bcm2835-${version}.tar.gz
-tar zxvf bcm2835-${version}.tar.gz 
-cd bcm2835-${version}
-sudo ./configure
-sudo make
-sudo make check
-sudo make install
+curl -LO "http://www.airspayce.com/mikem/bcm2835/bcm2835-${version}.tar.gz"
+tar -xzf "bcm2835-${version}.tar.gz"
+cd "bcm2835-${version}"
+sudo ./configure && sudo make && sudo make check && sudo make install
 ```
 
 ```shell
